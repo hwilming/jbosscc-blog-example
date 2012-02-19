@@ -1,8 +1,8 @@
 package de.akquinet.jbosscc.blog.common;
 
 import java.io.Serializable;
-import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -19,13 +19,14 @@ public abstract class AbstractEntity implements Serializable {
 	private Long id;
 
 	@Version
-	private Date version;
+	@Column(nullable = false)
+	private Long version;
 
 	public Long getId() {
 		return id;
 	}
 
-	public Date getVersion() {
+	public Long getVersion() {
 		return version;
 	}
 
