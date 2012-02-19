@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:" SHAPE="32,128,53,90" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::0" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="index::#index.xhtml" NAME="output"
+    PATH="/index.xhtml" TARGET="rules:#index.xhtml" TITLE="index" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="view::#blogEntry.xhtml" NAME="output1"
+    PATH="/blogEntry.xhtml" TARGET="rules:#blogEntry.xhtml" TITLE="view" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="true:#{blogEntryService.newInstance}:#blogEntryEdit.xhtml"
+    NAME="output2" PATH="/blogEntryEdit.xhtml"
+    TARGET="rules:#blogEntryEdit.xhtml"
+    TITLE="#{blogEntryService.newInstance}:true" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="true:#{blogEntryService.persistOrUpdate}:#blogEntry.xhtml"
+    NAME="output3" PATH="/blogEntry.xhtml"
+    TARGET="rules:#blogEntry.xhtml"
+    TITLE="#{blogEntryService.persistOrUpdate}:true" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#blogEntry.xhtml" PATH="/blogEntry.xhtml"
+  SHAPE="336,160,50,41" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#blogEntry.xhtml:0" NAME="item"
+   PATH="/blogEntry.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="edit::#blogEntryEdit.xhtml" NAME="output"
+    PATH="/blogEntryEdit.xhtml" TARGET="rules:#blogEntryEdit.xhtml"
+    TITLE="edit" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="true:#{blogEntryService.delete}:#index.xhtml" NAME="output1"
+    PATH="/index.xhtml" TARGET="rules:#index.xhtml"
+    TITLE="#{blogEntryService.delete}:true" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#index.xhtml" PATH="/index.xhtml"
+  SHAPE="328,80,50,25" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#blogEntryEdit.xhtml"
+  PATH="/blogEntryEdit.xhtml" SHAPE="312,296,50,25" model-entity="JSFProcessGroup"/>
+</PROCESS>
